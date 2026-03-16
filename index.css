@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+body { 
+    font-family: 'Inter', system-ui, sans-serif;
+    color: aliceblue; 
+}
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+.flame-text { 
+    background: linear-gradient(90deg, #FF4500, #FF8C00, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flame-text-2 {
+    font-size: 3rem;                    /* text-6xl */
+    font-weight: 700;                      /* font-bold */
+    letter-spacing: -0.05em;               /* tracking-tighter */
+    line-height: 1;                        /* leading-none */
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+
+    /* 🔥 Flame gradient fill (kept from our previous version) */
+    background: linear-gradient(90deg, 
+        #FF4500 0%, 
+        #FFAA00 30%, 
+        #FFEE00 50%, 
+        #FFAA00 70%, 
+        #FF5500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 🔥 Fire glow that passes any container border */
+    text-shadow: 
+        0 0 8px #ffffff,
+        0 0 18px #FFEE00,
+        0 0 32px #FFAA00,
+        0 0 50px #FF6600,
+        0 0 75px #FF3300,
+        0 0 100px rgba(255, 50, 0, 0.5);
+
+    /* Subtle living flame flicker */
+    animation: flame-flicker 1.2s infinite alternate ease-in-out;
+
+}
+
+@media (min-width: 520px) {
+    .flame-text-2 {
+        font-size: 3.75rem;                    /* text-6xl */
+        font-weight: 700;                      /* font-bold */
+        letter-spacing: -0.05em;               /* tracking-tighter */
+        line-height: 1;                        /* leading-none */
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        width: 100%;
+
+        /* 🔥 Flame gradient fill (kept from our previous version) */
+        background: linear-gradient(90deg, 
+            #FF4500 0%, 
+            #FFAA00 30%, 
+            #FFEE00 50%, 
+            #FFAA00 70%, 
+            #FF5500 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        /* 🔥 Fire glow that passes any container border */
+        text-shadow: 
+            0 0 8px #ffffff,
+            0 0 18px #FFEE00,
+            0 0 32px #FFAA00,
+            0 0 50px #FF6600,
+            0 0 75px #FF3300,
+            0 0 100px rgba(255, 50, 0, 0.5);
+
+        /* Subtle living flame flicker */
+        animation: flame-flicker 1.2s infinite alternate ease-in-out;
+
+    }
+}
+
+.Tokenomics-table-font {
+    font-size: 1.50rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+
+.Tokenomics-table-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;                    /* 32px */
+    text-align: center;
+}
+
+/* Responsive: md breakpoint (≥ 768px) */
+@media (min-width: 864px) {
+  .Tokenomics-table-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+    .Tokenomics-table-font {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+        margin: 0.5rem;   
+    }
+}
+
+.Header-container {
+    background-color: #1a1919; /* #1a1919 */
+    padding: 5px;
+    border-color: #FF8C00;
+    border: 5px;
+    min-width: 360px;
+    position: fixed;
+    inset-inline: 0; /* left: 0; right: 0; */
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);   /* better Safari support */
+    z-index: 50;
+    border-bottom: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Switch to row on larger screens */
+@media (min-width: 720px) {
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between; /* This creates separation */
+        align-items: flex-start;        /* Change to 'center' or 'stretch' if needed */
+        margin-bottom: 4px;
+    }
+}
+
+.nav-component {
+  padding: 0px;
+  text-align: center;
+}
+
+/* Give them different natural sizes (optional) */
+.item1 { min-width: 280px; }
+.item2 { min-width: 320px; }
+.item3 { min-width: 260px; }
+
+.introduction-section {
+  margin-top: var(--spacing-24);
+  
+}
+
+.primary-section {
+    background-color: #1a1919;
+    padding: 5px;
+    width: 100%;
+}
+
+.introduction {
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.section-container {
+    background-color: #1a1919;
+    padding: 5px;
+    width: 100%;
+}
+
+.alternate-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  border-top: 1px solid rgba(249, 115, 22, 0.2); /* border-orange-500/20 */
+  background-color: #1f160f;
+}
+
+/* Optional: tiny ember glow behind the flame-text */
+.alternate-section {
+  position: relative;
+}
+.alternate-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 140, 0, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Seamless flame transition between sections */
+.section-flame {
+  padding-top: 2rem;     /* py-24 */
+  padding-bottom: 6rem;
+  position: relative;
+  overflow: hidden;
+  
+  /* Beautiful continuous gradient that flows across sections */
+  background: linear-gradient(
+    to bottom,
+    #1a1919 0%,
+    #1f160f 45%,
+    #2a1f14 100%
+  );
+  
+  /* Subtle ember border (keeps your orange-500/20 vibe) */
+  border-top: 1px solid rgba(249, 115, 22, 0.18);
+}
+
+/* Optional: tiny glowing divider line that looks like a flame horizon */
+.section-flame::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 140, 0, 0.6),
+    transparent
+  );
+  box-shadow: 0 0 25px rgba(255, 120, 0, 0.5);
+}
+
+.div-text {
+    max-width: 64rem;          /* 896px at default 16px root font size */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;      /* 24px */
+    padding-right: 1.5rem;     /* 24px */
+}
+
+:root {
+  --spacing-20: 8rem;
+  --spacing-22: 0px;
+  --spacing-24: 410px;
+}
+
+.header-logo {
+    width: 225px;
+    margin: 0 auto;
+}
+
+.navbar li {
+    float: center;
+}
+
+.header-buy-btn {
+    font-size: 18px;
+}
+
+/* Hero section container (the white bg part) */
+.image-container {
+    width: 90%;                    /* Full width always */
+    height: 100%;
+    overflow-x: hidden;             /* Hide any accidental overflow */
+    background-color: white;        /* Assuming this is the white bg */
+    display: flex;                  /* Or grid, for better alignment */
+    justify-content: center;        /* Center content */
+    margin: 0 auto;
+    padding: 0;                     /* Remove side padding if causing gaps */
+    box-sizing: border-box;         /* Includes padding/borders in width */
+    max-width: 1000px;
+    }
+
+@media (min-width: 912px) {
+    .header-buy-btn {
+        color: white;
+    }
+}
+
+@media (min-width: 720px) {
+    .navbar li {
+        float: left;
+    }
+    .header-logo {
+        width: 225px;
+    }
+
+    nav a {
+        padding: 10px;
+        text-align: center;
+        display: block;
+        margin: 5px;
+    }
+
+    .introduction-section {
+        margin-top: var(--spacing-20);
+        width: 100%;
+    }
+
+    .image-container {
+        padding: 0 0px;              /* Optional: small side padding for breathing room */
+    }
+    
+    .adjusting-image {
+        width: 70%;                  /* Force full width on small screens */
+        max-width: 1000px;              /* Override any fixed max-width */
+    }
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+nav a {
+    position: relative;
+    padding: 1.2rem 2.8rem;
+    padding: 8px;
+    text-align: center;
+    display: block;
+    margin: 5px;
+    border: none;
+    border-radius: 99px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+nav a:hover .flame-container {
+    opacity: 1;
+}
+
+nav a:hover .flame-aura {
+    opacity: 0.92; /* subtle overall reduction */
+}
+
+nav a:hover .flame-border {
+    opacity: 0.95;
+}
+
+nav a:hover {
+    transform: translateY(-5px) scale(1.06);
+    background: linear-gradient(45deg, #FF4500, #FF8C00, #FFD700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Main outer flame aura – slightly softened brightness */
+.flame-aura {
+    position: absolute;
+    inset: -35px;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    mix-blend-mode: screen;
+    filter: blur(16px) contrast(1.4) brightness(1.15); /* reduced intensity */
+    z-index: -2;
+}
+
+.button:hover .flame-aura {
+    opacity: 0.92; /* subtle overall reduction */
+}
+
+.aura-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(ellipse at 50% 50%, #fffff0 12%, #fff9d4 38%, transparent 72%);
+    opacity: 0.58; /* softer base opacity */
+    animation: aura-pulse 5.2s infinite ease-in-out alternate;
+}
+
+.aura-layer:nth-child(1) { animation-duration: 4.4s; animation-delay: 0s;   box-shadow: 0 0 70px #ffffe8; }
+.aura-layer:nth-child(2) { animation-duration: 5.3s; animation-delay: 1.1s; box-shadow: 0 0 85px #ffeb9e; transform: scale(1.08); }
+.aura-layer:nth-child(3) { animation-duration: 4s;   animation-delay: 2.3s; box-shadow: 0 0 78px #fffce0; }
+
+@keyframes aura-pulse {
+    0%, 100%   { transform: scale(1) rotate(0deg); opacity: 0.62; }
+    50%        { transform: scale(1.12) rotate(0.8deg); opacity: 0.85; }
+}
+
+/* Border-hugging flame outline – kept radiant blonde, softened */
+.flame-border {
+    position: absolute;
+    inset: -6px;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+}
+
+.button:hover .flame-border {
+    opacity: 0.95;
+}
+
+.border-flame {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 
+    inset 0 0 20px #fffef5,
+    0 0 28px #fff9d9,
+    inset 0 0 40px #ffdb6e;
+    background: linear-gradient(transparent, rgba(255,255,240,0.12), transparent);
+    animation: border-flicker 3s infinite ease-in-out;
+    mix-blend-mode: screen;
+    filter: blur(7px) brightness(1.2);
+}
+
+.border-flame:nth-child(2) {
+    animation-duration: 3.6s;
+    animation-delay: 0.6s;
+    box-shadow: inset 0 0 32px #ffffea, 0 0 45px #ffe9a8;
+}
+
+@keyframes border-flicker {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    25%      { transform: scale(1.025); opacity: 0.95; }
+    50%      { transform: scale(0.98); opacity: 0.68; }
+    75%      { transform: scale(1.015); opacity: 0.9; }
+}
+
+/* Circulating sparks – unchanged count, slightly dimmed */
+.sparks {
+    position: absolute;
+    inset: -50px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.button:hover .sparks {
+    opacity: 0.65;
+}
+
+.spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #fffff2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #fffce6;
+    animation: spark-orbit 6s infinite linear;
+}
+
+.spark:nth-child(1) { top: 20%; left: -10%; animation-duration: 5s; }
+.spark:nth-child(2) { bottom: 30%; right: -10%; animation-duration: 7s; animation-delay: 1.5s; }
+.spark:nth-child(3) { top: 60%; left: 110%; animation-duration: 6.5s; animation-delay: 3s; }
+.spark:nth-child(4) { bottom: 15%; right: 105%; animation-duration: 5.8s; animation-delay: 4.2s; }
+
+@keyframes spark-orbit {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0.85; }
+    50%  { opacity: 0.95; }
+    100% { transform: translate(0, -140px) scale(0.4); opacity: 0; }
+}
+
+.holy {
+    position: relative;
+    color: #fffef0;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+    overflow: visible;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.pump-fun-btn a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    margin: 10px;
+}
+
+/* 🔥 Grok Chat Links – matches your flame theme perfectly */
+.grok-chats {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.grok-chats-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffaa00;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 12px rgba(255, 170, 0, 0.4);
+}
+
+.grok-chat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grok-chat-list li {
+  margin-bottom: 1rem;
+}
+
+.grok-chat-list a {
+  color: #ffcc55;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 170, 0, 0.05);
+  border: 1px solid transparent;
+}
+
+.grok-chat-list a:hover {
+  background: rgba(255, 170, 0, 0.12);
+  border-color: rgba(255, 170, 0, 0.3);
+  color: #ffee00;
+  text-shadow: 0 0 18px rgba(255, 200, 0, 0.7);
+  transform: translateX(8px);
+}
+
+.Header-display-temp {
+    max-width: 72rem;      /* Tailwind max-w-6xl ≈ 1152px */
+    margin-left: auto;     
+    margin-right: auto;    /* mx-auto */
+    padding-left: 1.5rem;  /* px-6 */
+    padding-right: 1.5rem;
+    padding-top: 1.25rem;  /* py-5 */
+    padding-bottom: 1.25rem;
+    
+    display: flex;         /* flex */
+    justify-content: space-between; /* justify-between */
+    align-items: center;   /* items-center */
+}
+
+.Header-display {
+    max-width: 72rem;
+    margin-left: auto;     
+    margin-right: auto; 
+    padding-left: 1.5rem;  /* px-6 */
+    padding-right: 1.5rem;
+    padding-top: 1rem;  /* py-5 */
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-test {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 1fr));
+}
+
+.vulpes-features {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.25rem 0 1.75rem 0;
+}
+
+.vulpes-features li {
+    position: relative;
+    padding-left: 2.25rem;
+    margin-bottom: 0.95rem;
+    line-height: 1.55;
+    font-size: 1.125rem;
+}
+
+.vulpes-features li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: #fb923c;
+    font-size: 1.75rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 8px #f59e0b) drop-shadow(0 0 16px rgba(251, 146, 60, 0.5));
+}
