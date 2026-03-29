@@ -277,7 +277,7 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
     padding: 0;                     /* Remove side padding if causing gaps */
     box-sizing: border-box;         /* Includes padding/borders in width */
     max-width: 1000px;
-    }
+}
 
 @media (min-width: 912px) {
     .header-buy-btn {
