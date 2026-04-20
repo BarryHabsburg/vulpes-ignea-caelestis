@@ -568,6 +568,7 @@ nav a:hover {
   grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 1fr));
 }
 
+/* Glowing Flame Bullets */
 .vulpes-features {
     list-style: none;
     padding-left: 0;
